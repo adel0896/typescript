@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var hello_1 = require("./hello");
+var myNewSanta = new hello_1.Santa("Adelina", 21);
+var myNewSled = new hello_1.Sled(myNewSanta);
+var myNewBag = new hello_1.Bag(10, hello_1.BagType.paper);
+var myCar = new hello_1.Present("car", 8, hello_1.PresentType.hard);
+var myLaptop = new hello_1.Present("laptop", 3, hello_1.PresentType.soft);
+myNewBag.addPresents(myCar);
+// myNewBag.addPresents(myLaptop);
+myNewSled.addBag(myNewBag);
+myNewBag.totalWeight();
+myNewSled.addPresentAndNewBagIfNeeded(myLaptop);
+myNewSled.print();
